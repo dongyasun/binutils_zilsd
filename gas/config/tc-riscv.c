@@ -4589,7 +4589,7 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
 	      }
 	      break;
 
-      case 'G': 
+      case 'G': /*Zilsd sd, ld operands*/
         switch(*++oparg)
         {
           case 'd':
@@ -4613,10 +4613,8 @@ riscv_ip (char *str, struct riscv_cl_insn *ip, expressionS *imm_expr,
                 }
               continue;
             }
-          // default:
-		      //   goto illegal_operand;
         }
-      break;
+        break;
       
 	    default:
 	    unknown_riscv_ip_operand:
